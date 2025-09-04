@@ -1,0 +1,11 @@
+<!-- this is a cleaner syntax than the block syntax below -->
+<%#= turbo_stream.prepend "quotes", partial: "quotes/quote", locals: { quote: @quote } %>
+<%= turbo_stream.prepend "quotes" do %>
+<%#= render partial: "quotes/quote", locals: { quote: @quote } %>
+<!-- 👇 👆 these 2 expressions are the same -->
+  <%= render @quote %>
+<% end %>
+<!-- the above block can be further shortedned like this: <%#= turbo_Stream.prepend "quotes" @quote %>  I f'ing love Rails -->
+<%#= turbo_stream.prepend "quotes", partial: "quotes/quote", locals: { quote: @quote } %>
+
+<%= turbo_stream.update Quote.new, "" %>
