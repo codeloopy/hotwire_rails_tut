@@ -56,4 +56,15 @@ class QuotesTest < ApplicationSystemTestCase
     click_on "Create quote"
     assert_selector "div.error-messages", text: "Name can't be blank"
   end
+
+  test "Cancel a quote" do
+    visit quotes_path
+    assert_selector "h1", text: "Quotes"
+
+    click_on "New quote"
+    fill_in "Name", with: "Cancelling quote"
+
+    click_on "Cancel"
+    refute_text "Cancelling quote"
+  end
 end
