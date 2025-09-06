@@ -1,5 +1,6 @@
 class Quote < ApplicationRecord
   validates :name, presence: true
+  blongs_to :company
   # after_create_commit -> { broadcast_prepend_to "quotes", partial: "quotes/quote", locals: { quote: self }, target: "quotes" }
 
   # By default, the target option will be equal to model_name.plural, which is equal to "quotes"
