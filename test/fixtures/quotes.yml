@@ -1,8 +1,11 @@
 first:
+  company_id: 0
   name: First quote
 
 second:
+  company_id: 0
   name: Second quote
 
 third:
+  company_id: 0
   name: Third quote
