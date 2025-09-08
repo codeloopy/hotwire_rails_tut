@@ -15,7 +15,7 @@ class Quote < ApplicationRecord
   # after_destroy_commit -> { broadcast_remove_to "quotes" }
   # The three callbacks 👆 are equivalent to a single line of code.
 
-  broadcasts_to ->(quote) { "quotes" }, inserts_by: :prepend
+  broadcasts_to ->(quote) { [ quote.company, "quotes" ] }, inserts_by: :prepend
 
   scope :ordered, -> { order(updated_at: :desc) }
 end
