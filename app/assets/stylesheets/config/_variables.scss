@@ -53,6 +53,8 @@
 
   // Border
   --border: solid 2px var(--color-light);
+  // Border dashed
+  --border-dashed: dashed 4px var(--color-light);
 
   // Shadows
   --shadow-large:  2px 4px 10px hsl(0 0% 0% / 0.1);
